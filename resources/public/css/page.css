@@ -1,4 +1,4 @@
-.b-body{background:url(/images/background.png);}
+.b-body{background:url(/images/background.png);font-family: 'PT Sans', sans-serif;}
 .b-header{}
 .b-header h2{margin-top:0;}
 .b-header h4{letter-spacing:0.3em;font-weight:normal;margin-bottom:0;}

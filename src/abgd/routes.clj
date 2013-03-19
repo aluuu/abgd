@@ -12,6 +12,7 @@
    [:head
     [:title "&#945;&#946;&#947;&#948;"]
     (include-css
+     "http://fonts.googleapis.com/css?family=PT+Sans"
      "/bootstrap/css/bootstrap.min.css"
      "/bootstrap/css/bootstrap-responsive.min.css"
      "/css/page.css")]
@@ -23,7 +24,7 @@
      [:div {:class "m-top-big-margin"}
       [:i {:class "b-arrow m-to-button"}]
       [:em {:class "b-button-holder"}
-       [:a {:class "btn btn-large b-button disabled" :id "js-sort"}
+       [:button {:class "btn btn-large b-button disabled" :id "js-sort"}
         "Сортировать"]]
       [:i {:class "b-arrow m-from-button"}]]
      [:div {:class "b-textarea-holder span12 m-top-margin"}
