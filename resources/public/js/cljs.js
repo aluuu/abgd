@@ -16830,9 +16830,14 @@ jayq.core.ajax_m = cljs.core.ObjMap.fromObject(["\ufdd0'return", "\ufdd0'bind", 
 }, "\ufdd0'zero":cljs.core.identity});
 var abgd = {core:{}};
 abgd.core.start = function() {
-  var a = tailrecursion.javelin_demos.dom.form_cell.call(null, "#source"), a = tailrecursion.javelin.lift.call(null, clojure.string.split_lines).call(null, a);
-  tailrecursion.javelin.lift.call(null, tailrecursion.javelin_demos.dom.html_BANG_).call(null, "#dest", tailrecursion.javelin.lift.call(null, clojure.string.join).call(null, "\n", tailrecursion.javelin.lift.call(null, cljs.core.sort).call(null, a)));
-  return null
+  var a = jayq.core.$.call(null, "#js-sort"), b = tailrecursion.javelin_demos.dom.form_cell.call(null, "#js-source"), c = tailrecursion.javelin.lift.call(null, cljs.core.sort).call(null, tailrecursion.javelin.lift.call(null, cljs.core.filter).call(null, tailrecursion.javelin.lift.call(null, cljs.core.comp).call(null, cljs.core.not, cljs.core.empty_QMARK_), tailrecursion.javelin.lift.call(null, clojure.string.split_lines).call(null, b))), d = tailrecursion.javelin.lift.call(null, tailrecursion.javelin.input.call(null, 
+  function(a, b) {
+    return a > b
+  })).call(null, tailrecursion.javelin.lift.call(null, cljs.core.count).call(null, c), 1);
+  tailrecursion.javelin.lift.call(null, tailrecursion.javelin.lift.call(null, tailrecursion.javelin.if_STAR_).call(null, d, jayq.core.remove_class, jayq.core.add_class)).call(null, a, "disabled");
+  return jayq.core.bind.call(null, a, "click", function() {
+    return cljs.core.truth_(cljs.core.deref.call(null, d)) ? tailrecursion.javelin_demos.dom.html_BANG_.call(null, "#js-destination", clojure.string.join.call(null, "\n", cljs.core.deref.call(null, c))) : null
+  })
 };
 jayq.core.document_ready.call(null, abgd.core.start);
 tailrecursion.javelin_demos.frequencies = {};
