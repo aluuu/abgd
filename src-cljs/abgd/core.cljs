@@ -17,6 +17,7 @@
         button-enabled? (cell (> (count sorted-list) 1))]
 
     (cell ((if button-enabled? jq/remove-class jq/add-class) sort-button "disabled"))
+
     (jq/bind sort-button "click"
              #(if @button-enabled?
                 (html! "#js-destination" (join "\n" @sorted-list))))))
